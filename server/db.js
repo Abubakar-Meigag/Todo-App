@@ -1,11 +1,11 @@
-const Pool = require("pg").Pool;
+const { Pool } = require("pg");
 
-const pool = new Pool({
-  PG_USER: "bekomeigag",
-  PG_HOST: "localhost",
-  PG_DATABASE: "todo",
-  PG_PORT: 5432,
-  PG_PASSWORD: "Cyf@3377441",
+const db = new Pool({
+  user: "bekomeigag", // replace with you username
+  host: "localhost",
+  database: "data_todo",
+  password: "",
+  port: 5432,
 });
 
-module.exports = pool;
+module.exports = db;
