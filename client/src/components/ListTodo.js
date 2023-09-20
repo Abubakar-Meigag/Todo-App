@@ -18,7 +18,7 @@ function ListTodo() {
     useEffect(() => {
         getTodo();
     }, [])
-    
+
     const deleteTodo = async (id) => {
     try {
         const deleteTodo = await fetch(`http://localhost:5099/todo/${id}`, {
@@ -30,39 +30,39 @@ function ListTodo() {
         console.error(err.message);
     }
     };
-    
+
     return (
-      <div>
+        <div>
         <Fragment>
-          <table className="table table-striped mt-5">
+            <table className="table table-striped mt-5">
             <thead>
-              <tr>
+                <tr>
                 <th scope="col">#</th>
                 <th scope="col">description</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
-              </tr>
+                </tr>
             </thead>
             <tbody>
-              {todoList.map((todo) => (
+                {todoList.map((todo) => (
                 <tr key={todo.todo_id}>
-                  <td>{todo.todo_id}</td>
-                  <td>{todo.description}</td>
-                  <td>Edit</td>
-                  <td>
+                    <td>{todo.todo_id}</td>
+                    <td>{todo.description}</td>
+                    <td>Edit</td>
+                    <td>
                     <button
-                      className="btn btn-danger"
-                      onClick={() => deleteTodo(todo.todo_id)}
+                        className="btn btn-danger"
+                        onClick={() => deleteTodo(todo.todo_id)}
                     >
-                      Delete
+                        Delete
                     </button>
-                  </td>
+                    </td>
                 </tr>
-              ))}
+                ))}
             </tbody>
-          </table>
+            </table>
         </Fragment>
-      </div>
+        </div>
     );
 }
 
