@@ -8,16 +8,18 @@ function InputTodo() {
         e.preventDefault()
         try {
             const body = { description }
-            const res = await fetch("http://localhost:5099/todo", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(body)
-            })
-            console.log(res);
+          const res = await fetch("http://localhost:5099/todo", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+          });
+          console.warn(res);
+          window.location = "/";
         } catch (err) {
             console.error(err.message);
         }
     }
+    
   return (
     <Fragment>
       <h1 className="text-center mt-5">Beko Todo List</h1>
