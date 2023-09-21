@@ -22,7 +22,9 @@ function InputTodo() {
     
   return (
     <Fragment>
-      <h1 className="text-center mt-5">Beko Todo List</h1>
+      <h1 className="text-center title-header fs-2 mt-5">
+        Beko Todo List
+      </h1>
       <form className="d-flex mt-5" onSubmit={sendTodo}>
         <input
           type="text"
@@ -30,7 +32,7 @@ function InputTodo() {
           value={description}
           onChange={handelChange}
         />
-        <button className="btn btn-success">Add</button>
+        <button className="btn btn-success ml-2 px-5 py-2">Add</button>
       </form>
     </Fragment>
   );

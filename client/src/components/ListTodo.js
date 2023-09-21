@@ -35,11 +35,11 @@ function ListTodo() {
     return (
         <div>
         <Fragment>
-            <table className="table table-striped mt-5">
+            <table className="table table-dark table-hover fw-bold fs-2 mt-5">
             <thead>
                 <tr>
                 <th scope="col">#</th>
-                <th scope="col">description</th>
+                <th scope="col">Description</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
                 </tr>

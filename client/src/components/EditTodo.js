@@ -3,6 +3,7 @@ import React, { Fragment, useState } from "react";
 function EditTodo({ todo }) {
   const [description, setDescription] = useState(todo.description);
   const handelChange = (e) => setDescription(e.target.value);
+  const handelNoChange = () => setDescription(todo.description);
 
   const getUpdateTodo = async (e) => {
     e.preventDefault();
@@ -36,7 +37,12 @@ function EditTodo({ todo }) {
           <div className="modal-content">
             <div className="modal-header">
               <h4 className="modal-title">Edit Todo</h4>
-              <button type="button" className="close" data-dismiss="modal">
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                onClick={handelNoChange}
+              >
                 &times;
               </button>
             </div>
@@ -63,6 +69,7 @@ function EditTodo({ todo }) {
                 type="button"
                 className="btn btn-danger"
                 data-dismiss="modal"
+                onClick={handelNoChange}
               >
                 Close
               </button>
