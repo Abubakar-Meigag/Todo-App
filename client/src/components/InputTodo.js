@@ -8,10 +8,10 @@ function InputTodo() {
       e.preventDefault()
       try {
           const body = { description }
-        const res = await fetch("http://localhost:5099/todo", {
+        const res = await fetch("https://beko-todo-app.onrender.com/todo", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body)
+          body: JSON.stringify(body),
         });
         console.warn(res);
         window.location = "/";

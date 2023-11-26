@@ -3,7 +3,7 @@ import EditTodo from "./EditTodo";
 
 function ListTodo() {
     const [todoList, setTodoList] = useState([]);
-    const url = ("http://localhost:5099/todo");
+    const url = "https://beko-todo-app.onrender.com/todo";
 
     const getTodo = async () => {
         try {
@@ -22,9 +22,12 @@ function ListTodo() {
 
     const deleteTodo = async (id) => {
     try {
-        const deleteTodo = await fetch(`http://localhost:5099/todo/${id}`, {
-        method: "DELETE",
-        });
+        const deleteTodo = await fetch(
+          `https://beko-todo-app.onrender.com/todo/${id}`,
+          {
+            method: "DELETE",
+          }
+        );
         console.log(deleteTodo);
         setTodoList(todoList.filter((todo) => todo.todo_id !== id));
     } catch (err) {

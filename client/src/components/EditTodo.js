@@ -9,11 +9,14 @@ function EditTodo({ todo }) {
     e.preventDefault();
     try {
       const body = { description };
-      const res = await fetch(`http://localhost:5099/todo/${todo.todo_id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
+      const res = await fetch(
+        `https://beko-todo-app.onrender.com/todo/${todo.todo_id}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        }
+      );
       console.warn(res);
       window.location = "/";
     } catch (err) {
